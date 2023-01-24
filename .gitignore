@@ -1,0 +1,5 @@
+/target
+**/*.rs.bk
+/.idea
+rust-practice.iml
+Cargo.lock
