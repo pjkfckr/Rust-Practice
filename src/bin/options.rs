@@ -26,6 +26,26 @@ struct Customer {
     email: String
 }
 
+struct GroceryItem {
+    name: String,
+    qty: i32,
+}
+
+fn find_quantity(name: &str) -> Option<i32> {
+    let groceries = vec![
+        GroceryItem { name: "bananas".to_owned(), qty: 4 },
+        GroceryItem { name: "eggs".to_owned(), qty: 12 },
+        GroceryItem { name: "bread".to_owned(), qty: 1 }
+    ];
+
+    for item in groceries {
+        if item.name == name {
+            return Some(item.qty);
+        }
+    }
+    None
+}
+
 
 fn main() {
     let mark = Customer {
@@ -41,4 +61,17 @@ fn main() {
         Some(age) => println!("customer is {:?} years old", age),
         None => println!("customer age not provided")
     }
+
+    let quantity = find_quantity("bananas");
+    if quantity.is_some() {
+        println!("Quantity: {:?}", quantity);
+    }
+
 }
+
+// Recap
+// * "Option" 타입에는 데이터가 있을 수도 있고 없을 수 있습니다.
+//    데이터가 있는 경우에는 "Some"으로 표시하고,
+//    데이터가 없는 경우에는 "None"으로 표시합니다
+// * 폼 필드 같은 선택적 데이터를 다룰 때 매우 유용합니다.
+// * 구조체에 Optional 데이터의 타입을 지정하고 싶을 때는, "Option<type>"으로 정의합니다
