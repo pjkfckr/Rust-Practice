@@ -1,8 +1,8 @@
-use crate::greet::hello;
 use std::collections::HashMap;
 
 mod greet {
     use std::collections::HashMap;
+
     pub(crate) fn hello() {
         println!("hello");
     }
@@ -21,8 +21,6 @@ mod math {
         a - b
     }
 }
-
-
 
 fn main() {
     use greet::hello;
