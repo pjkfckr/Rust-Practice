@@ -1,5 +1,5 @@
 [package]
-name = "rust-practice"
+name = "session_1_9"
 version = "0.0.1"
 authors = ["Yeong <pjkfckr@gmail.com>"]
 edition = "2021"
